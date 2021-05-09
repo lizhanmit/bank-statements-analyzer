@@ -19,6 +19,11 @@ public class BankStatementAnalyzer {
 		final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 		
 		collectSummary(bankStatementProcessor);
+		
+		// better to use lambda expression
+		// by doing this, do not need to create a new class every time
+		//final List<BankTransaction> transactions = bankStatementProcessor.findTransactions(new BankTransactionIsInFebruaryAndExpensive());
+		final List<BankTransaction> transactions = bankStatementProcessor.findTransactions(bankTransaction -> bankTransaction.getDate().getMonth() == Month.FEBRUARY && bankTransaction.getAmount() >= 1_000);
 	}
 	
 
