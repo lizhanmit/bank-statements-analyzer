@@ -53,7 +53,7 @@ public class BankStatementProcessor {
 		return result;
 	}
 	
-	// if this is a  very common operation, 
+	// if this is a very common operation, 
 	// it makes sense to extract it into an explicit API to make it easier for users to understand and use
 	public List<BankTransaction> findTransactionsGreaterThanEqual(final double amount) {
 		return findTransactions(bankTransaction -> bankTransaction.getAmount() >= amount);
