@@ -1,5 +1,6 @@
 package com.zhandev;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class BankTransaction {
 
@@ -13,6 +14,7 @@ public class BankTransaction {
 		this.description = description;
 	}
 
+	
 	public LocalDate getDate() {
 		return date;
 	}
@@ -25,8 +27,6 @@ public class BankTransaction {
 		return description;
 	}
 
-	
-	
 	@Override
 	public String toString() {
 		return "BankTransaction [date=" + date + ", amount=" + amount + ", description=" + description + "]";
